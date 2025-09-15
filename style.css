@@ -247,16 +247,6 @@ li a {
 li a:hover {
     color: #00bfae;
 }
-@media (max-width: 600px) {
-    footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        margin-top: 0;
-        z-index: 10;
-    }
-}
 nav a.active {
     background: var(--accent);
     color: var(--primary-dark);
@@ -363,6 +353,7 @@ nav a.active {
         bottom: 80px; 
     }
 }
+
 
 
 
