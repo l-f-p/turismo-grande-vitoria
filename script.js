@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const addresses = Array.from(checkedBoxes).map(checkbox => checkbox.closest('li').getAttribute('data-address'));
             // Codifica cada endereço para ser seguro para URLs e junta todos com uma barra "/".
             const urlPath = addresses.map(addr => encodeURIComponent(addr)).join('/');
-            const googleMapsUrl = `http://googleusercontent.com/maps/google.com/19${urlPath}`;
+            const googleMapsUrl = `https://www.google.com/maps/dir/${urlPath}`;
             window.open(googleMapsUrl, '_blank'); // Abre a rota numa nova aba.
         });
     }
@@ -189,3 +189,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicia o sistema de favoritos assim que a página carrega.
     updateFavoritesUI();
 });
+
