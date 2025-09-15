@@ -4,215 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/684/684908.png">
     <title>Turismo na Grande Vitória</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f8f9fa;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background: #00695c;
-            color: white;
-            padding: 15px 20px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        h2 {
-            text-align: center;
-            margin-top: 30px;
-            color: #004d40;
-        }
-
-        section {
-            max-width: 900px;
-            margin: 30px auto;
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        h3 {
-            margin-top: 25px;
-            color: #00796b;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
-        a {
-            color: #00796b;
-            text-decoration: none;
-            margin-right: 8px;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        p {
-            margin: 5px 0 15px 0;
-            color: #555;
-        }
-
-        footer {
-            background: #004d40;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 40px;
-        }
-
-        /* Destaque para blocos */
-        li::before {
-            content: "✨ ";
-        }
-
-        /* Espaçamento uniforme para itens da lista */
-        li {
-            font-weight: bold;
-            margin-top: 30px;
-        }
-    </style>
 </head>
 <body>
     <header>
         <h1>🌴 Turismo na Grande Vitória</h1>
-        <!--
         <nav>
-            <a href="index.html">Home</a> |
-            <a href="Sobre.html">Sobre</a> |
-            <a href="Vix.html">Vix</a> |
-            <a href="Contato.html">Contato</a>
+            <a href="index.html">Home</a>
+            <a href="OndeVisitar.html">Onde Visitar</a>
+            <a href="OndeComer.html">Onde Comer</a>
+
         </nav>
-        -->
     </header>
 
-    <section>
-        <h2>Conhecendo a Grande Vitória</h2>
+    <section class="hero">
+        <div class="hero-img"></div>
+        <div class="hero-content">
+            <h2>Bem-vindo à Grande Vitória!</h2>
+            <p>
+                Descubra os melhores pontos turísticos, restaurantes e experiências inesquecíveis em Vitória, Vila Velha, Serra e região. Planeje seu passeio, veja dicas exclusivas e aproveite tudo o que o Espírito Santo tem de melhor!
+            </p>
+            <div class="hero-btns">
+                <a href="OndeVisitar.html">Explorar Pontos Turísticos</a>
+                <a href="OndeComer.html">Melhores Restaurantes</a>
 
-        <ul>
-            <h3>Vitória</h3>
-
-            <li>Paneleiras de Goiabeiras</li>
-            <a href="https://www.google.com/maps/place/Paneleiras+de+Goiabeiras+-+R.+Leopoldo+Gomes+de+Sales,+94+-+Goiabeiras,+Vit%C3%B3ria+-+ES,+29075-100/data=!4m2!3m1!1s0xb819c059fff577:0x588641f76aca0f91?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESBzI1LjM2LjIYACCenQoqmQEsOTQyNjc3MjcsOTQyODQ1MDUsOTQyMjMyOTksOTQyMTY0MTMsOTQyODA1NzYsOTQyMTI0OTYsOTQyMDczOTQsOTQyMDc1MDYsOTQyMDg1MDYsOTQyMTc1MjMsOTQyMTg2NTMsOTQyMjk4MzksOTQyNzUxNjgsOTQyNjI3MzksNDcwODQzOTMsOTQyMTMyMDAsOTQyNTgzMjVCAkJS&skid=f6b0368e-a198-4159-9446-bbb94b171ed3&g_st=aw" target="_blank">&emsp;📍 Localização</a>
-
-            <li>Palácio Anchieta</li>
-            <a href="https://www.google.com/maps/place/Palácio+Anchieta/data=!4m2!3m1!1s0x0:0xc710cbd6f33bbd86?sa=X&ved=1t:2428&ictx=111" target="_blank">&emsp;📍 Localização</a> |
-            <a href="https://www.es.gov.br/governo/palacio-anchieta" target="_blank">🌐 Site Gov</a>
-
-            <li>Museu de Arte do Espírito Santo (MAES)</li>
-            <a href="https://www.google.com/maps/place/Museu+de+Artes+do+Esp%C3%ADrito+Santo/@-20.3199393,-40.3369851,17z/data=!3m1!4b1!4m6!3m5!1s0xb83db07defaa87:0xd2c2a854296fbc8a!8m2!3d-20.3199393!4d-40.3344102!16s%2Fg%2F15dpjxz2?entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">&emsp;📍 Localização</a> |
-            <a href="https://secult.es.gov.br/museu-de-arte-do-espirito-santo-dionisio-del-santo" target="_blank">🌐 Site Gov</a>
-
-            <li>Sesc Glória</li>
-            <a href="https://www.google.com/maps/place/Sesc+Gl%C3%B3ria/@-20.3206126,-40.3378674,17z/data=!3m1!4b1!4m6!3m5!1s0xb83dbad8922f93:0xa09e11ed2521b5ee!8m2!3d-20.3206126!4d-40.3352925!16s%2Fg%2F1tgwc493?entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">&emsp;📍 Localização</a> |
-            <a href="https://www.sesc-es.com.br/unidades/sesc-gloria/" target="_blank">🌐 Site Oficial</a>
-
-            <li>A Casa Flor</li>
-            <a href="https://www.google.com/maps/place/A+Casa+Flor/@-20.3190627,-40.338499,17z/data=!3m1!4b1!4m6!3m5!1s0xb83d5e5d2bd0c7:0xb90fa06a90e23f65!8m2!3d-20.3190627!4d-40.338499!16s%2Fg%2F11sk3w5cdh?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">&emsp;📍 Localização</a>
-
-            <li>Museu de Ciências da Vida (UFES)</li>
-            <a href="https://www.google.com/maps/place/Museu+de+Ci%C3%AAncias+da+Vida+-+MCV/@-20.2774143,-40.3024234,17z/data=!3m1!4b1!4m6!3m5!1s0xb81803c0b54b7d:0xea6c0a740387ed94!8m2!3d-20.2774143!4d-40.3024234!16s%2Fg%2F11f4zyvbdr?entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">&emsp;📍 Localização</a> |
-            <a href="https://mcv.ufes.br" target="_blank">🌐 Site UFES</a>
-            
-
-            <li>Cine Metrópolis (UFES)</li>
-            <a href="https://www.google.com/maps/place/Cine+Metr%C3%B3polis/@-20.2774724,-40.3085675,15.33z/data=!4m6!3m5!1s0xb81803b880b19b:0x98a468f51c6f5c35!8m2!3d-20.277755!4d-40.3023879!16s%2Fg%2F11fkq_skg9?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">&emsp;📍 Localização</a> |
-            <a href="https://cinema.ufes.br/" target="_blank">🌐 Site UFES</a>
-            
-            <li>MUCANE – Museu Capixaba do Negro</li>
-            <a href="https://www.google.com/maps/place/MUCANE+-+Museu+Capixaba+do+Negro/@-20.3208484,-40.3440733,17z/data=!3m1!4b1!4m6!3m5!1s0xb83db04fa67267:0xb3a0007f6057cce!8m2!3d-20.3208484!4d-40.3414984!16s%2Fg%2F1q69rxrdt?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">&emsp;📍 Localização</a> |
-            <a href="https://m.vitoria.es.gov.br/semc/museu-capixaba-do-negro" target="_blank">🌐 Site Gov</a>
-            
-            <li>Píer de Iemanjá</li>
-            <a href="https://www.google.com/maps/place/P%C3%ADer+de+Iemanj%C3%A1+-+Pier+de+Iemanj%C3%A1+-+Goiabeiras,+Vit%C3%B3ria+-+ES/@-20.2920481,-40.288728,17z/data=!3m1!4b1!4m6!3m5!1s0xb8178cf73c10eb:0xb70f84669f39f9bc!8m2!3d-20.2920481!4d-40.2861531!16s%2Fg%2F11c5_dl1jl?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">&emsp;📍 Localização</a>
-            <p>Bom local para piqueniques e lazer ao ar livre</p>
-            <br>
-
-            <h3>Vila Velha</h3>
-
-            <li>Morro do Moreno</li>
-            <a href="https://www.google.com/maps/place/Morro+do+Moreno/@-20.3263068,-40.2800384,17z/data=!3m1!4b1!4m6!3m5!1s0xb81652ae6a178b:0xa9fa17d57c1af295!8m2!3d-20.3263068!4d-40.2774635!16s%2Fg%2F1227vjzt?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">&emsp;📍 Localização</a>
-            <p>Trilha e mirante com vista panorâmica da Grande Vitória</p>
-            
-            <li>Convento da Penha</li>
-            <a href="https://www.google.com/maps/place/Convento+da+Penha/@-20.3293623,-40.2896439,17z/data=!3m1!4b1!4m6!3m5!1s0xb816498a913f37:0xa2c5411362c10f93!8m2!3d-20.3293623!4d-40.287069!16zL20vMDMwOHE5?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">&emsp;📍 Localização</a> |
-            <a href="https://conventodapenha.org.br" target="_blank">🌐 Site Oficial</a>
-            
-            <li>Farol de Santa Luzia</li>
-            <a href="https://www.google.com/maps/place/Lighthouse+Santa+Luzia/@-20.3244785,-40.2866188,15z/data=!4m6!3m5!1s0xb817ab83631c57:0xf2d8777238238fe1!8m2!3d-20.3244785!4d-40.2675644!16s%2Fg%2F121qsl7x?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">&emsp;📍 Localização</a> |
-            <a href="https://www.vilavelha.es.gov.br/paginas/turismo-esporte-e-cultura-farol-santa-luzia" target="_blank">🌐 Site Gov(Link com erro)</a>
-            
-            <li>Praia Secreta</li>
-            <a href="https://www.google.com/maps/place/R.+Praia+Secreta+-+Praia+da+Costa,+Vila+Velha+-+ES/@-20.325373,-40.2725423,17z/data=!3m1!4b1!4m6!3m5!1s0xb817aa3a9bbd51:0xab92f38aec4b12e5!8m2!3d-20.325373!4d-40.2699674!16s%2Fg%2F11jntl_c0s?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">&emsp;📍 Localização</a>
-            
-            <li>38º Batalhão de Infantaria</li>
-            <a href="https://www.google.com/maps/place/38%C2%B0+Batalh%C3%A3o+de+Infantaria+do+Ex%C3%A9rcito+Brasileiro/@-20.324783,-40.2893106,17z/data=!3m1!4b1!4m6!3m5!1s0xb8164ae8fd801b:0xbc51f0d89b68bbb7!8m2!3d-20.324783!4d-40.2867357!16s%2Fg%2F1hc38f6xb?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">&emsp;📍 Localização</a> |
-            <a href="https://www.38bi.eb.mil.br/servicos/espaco-cultural-forte-sao-francisco-xavier-da-barra?csrt=14848846816520279570" target="_blank">🌐 Site Oficial</a> |
-            <a href="https://www.instagram.com/cafeteriavistadoforte/" target="_blank">☕ Cafeteria Vista do Forte</a>
-            <p>Visita exige vestimenta adequada</p>
-            
-            <li>Museu Vale</li>
-            <a href="https://www.google.com/maps/place/Vale+Museum/@-20.326723,-40.3478316,17.75z/data=!4m6!3m5!1s0xb83d113ac828e1:0xc5e6358af776d872!8m2!3d-20.3266431!4d-40.3450837!16s%2Fg%2F1231gk8q?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">&emsp;📍 Localização</a> |
-            <a href="https://museuvale.org" target="_blank">🌐 Site Oficial</a>
-            <p>Exposições de arte e eventos culturais</p>
-
-            <h3>Serra</h3>
-          
-            <li>Igreja dos Reis Magos</li>
-            <a href="https://www.google.com/maps/place/igreja+dos+reis+magos/data=!4m2!3m1!1s0xb7f12233915ec1:0x7f2c840206b68616?sa=X&ved=1t:155783&ictx=111" target="_blank">&emsp;📍 Localização</a>
-            <p>Igreja histórica tombada, datada do período colonial</p>
-            
-        </ul>
-    </section>
-
-    <section>
-        <h2>Fora da Grande Vitória</h2>
-        <ul>
-            <li>Domingos Martins</li>
-            <a href="https://www.google.com/maps/place/Domingos+Martins,+State+of+Esp%C3%ADrito+Santo,+29260-000/@-20.3653456,-40.6687556,15z/data=!3m1!4b1!4m6!3m5!1s0xb9b516e21b6539:0x6f177d0d615b9971!8m2!3d-20.3625703!4d-40.6582081!16s%2Fg%2F11bxfzb516?entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">&emsp;📍 Localização</a> |
-            
-            <li>Pedra Azul</li>
-            <a href="https://maps.app.goo.gl/j3wjBP9e7qMMPuHg7" target="_blank">&emsp;📍 Localização</a> |
-            <a href="https://iema.es.gov.br/PEPAZ" target="_blank">🌐 Site Gov</a>
-            
-            <li>Mosteiro Zen (Buda)</li>
-            <a href="https://www.google.com/maps/place/Mosteiro+ZEN/@-19.8744495,-40.3971541,14.17z/data=!4m6!3m5!1s0xb79594af950b25:0x9022edda28395277!8m2!3d-19.865873!4d-40.3826935!16s%2Fg%2F11rkdqm5ft?entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">&emsp;📍 Localização</a> |
-            <a href="https://mosteirozen.com.br/?page_id=682" target="_blank">🌐 Site Oficial</a>
-            <p>Acesso a área externa onde fica o Buda gigante é gratuita,<br>agora se quiser entrar no mosteiro, a entrada custa R$20,00</p>
-            
-        </ul>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <section>
-            <h2>Mapa dos Pontos Turísticos</h2>
-            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1ik6C1K6StANmTeuBqgxgQaBfX-MMM8E&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
-        </section>
-        <!-- <p>🌎 Projeto de Lucas - Turismo na Grande Vitória</p> -->
+        <!--🌎 Projeto de Lucas - Turismo na Grande Vitória-->
     </footer>
 </body>
 </html>
+</body>
+</html>
+
