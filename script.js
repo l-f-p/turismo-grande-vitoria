@@ -189,4 +189,3 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicia o sistema de favoritos assim que a página carrega.
     updateFavoritesUI();
 });
-
