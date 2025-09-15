@@ -504,3 +504,44 @@ footer {
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.7); /* Branco com um pouco de transparência */
 }
+
+/* --- Estilos da Lista de Favoritos com Checkbox --- */
+
+/* Ajusta o item da lista para alinhar o checkbox com o conteúdo */
+#favorites-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaço entre o checkbox e o texto */
+}
+
+/* Remove a decoração de "antes" para não conflitar com o checkbox */
+#favorites-list li::before {
+    content: none;
+}
+
+/* Estilo para a caixa de seleção */
+#favorites-list input[type="checkbox"] {
+    min-width: 18px;
+    min-height: 18px;
+}
+
+/* Estilo para o novo botão de Criar Rota */
+#create-route-btn {
+    /* Reutiliza o estilo do botão de toggle */
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0 auto;
+    background: var(--primary); /* Cor primária para destacar */
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#create-route-btn:hover {
+    background: var(--primary-dark);
+}
