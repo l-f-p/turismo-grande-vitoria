@@ -1,50 +1,91 @@
+/* --- Paleta de Cores e Variáveis Globais --- */
+/* Definir as cores e sombras aqui permite reutilizá-las em todo o site. */
+/* Se quiser mudar uma cor, basta alterar aqui e ela mudará em todos os lugares. */
 :root {
-    --primary: #00695c;
-    --primary-dark: #004d40;
-    --accent: #00bfae;
-    --background: #f8f9fa;
-    --white: #fff;
-    --shadow: 0 2px 8px rgba(0,0,0,0.08);
+    --primary: #00695c;      /* Verde principal, mais escuro */
+    --primary-dark: #004d40; /* Verde bem escuro, para textos e fundos */
+    --accent: #00bfae;      /* Verde-água, para destaque e links */
+    --background: #f8f9fa;  /* Cinza bem claro para o fundo da página */
+    --white: #fff;           /* Branco puro */
+    --shadow: 0 2px 8px rgba(0,0,0,0.08); /* Sombra suave padrão */
 }
+
+/* --- Estilos de Base --- */
+/* Configurações aplicadas à página inteira. */
+html {
+    /* Garante que a cor de fundo cubra toda a janela do navegador. */
+    background-color: var(--background);
+}
+
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    /* A técnica do "Sticky Footer": */
+    display: flex;             /* Ativa o layout flexbox */
+    flex-direction: column;    /* Organiza os elementos em uma coluna (header, main, footer) */
+    min-height: 100vh;         /* Garante que o corpo ocupe no mínimo 100% da altura da tela */
+    
+    font-family: 'Segoe UI', Arial, sans-serif; /* Fonte padrão do site */
     background: var(--background);
-    color: #333;
-    margin: 0;
-    padding: 0;
+    color: #333;               /* Cor padrão do texto */
+    margin: 0;                 /* Remove margens padrão do navegador */
+    padding: 0;                /* Remove preenchimentos padrão */
 }
+
+main {
+    /* Parte da técnica "Sticky Footer": faz o conteúdo principal se esticar */
+    /* para empurrar o rodapé para o final da tela em páginas curtas. */
+    flex: 1;
+}
+
+/* --- Cabeçalho e Navegação --- */
 header {
-    background: linear-gradient(90deg, var(--primary), var(--accent));
+    background: linear-gradient(90deg, var(--primary), var(--accent)); /* Fundo em gradiente */
     color: var(--white);
     padding: 32px 20px 20px 20px;
     text-align: center;
     box-shadow: var(--shadow);
 }
+
 header h1 {
     font-size: 2.5rem;
     margin: 0 0 10px 0;
     letter-spacing: 1px;
 }
+
 nav {
-    margin: 0px 0 0 0;
-    text-align: center;
+    display: flex;             /* Transforma a nav em um contêiner flexível */
+    justify-content: center;   /* Centraliza os botões */
+    flex-wrap: nowrap;         /* Impede que os botões quebrem a linha */
+    gap: 8px;                  /* Adiciona um espaço de 8px entre os botões */
+    margin: 0 10px;            /* Adiciona uma pequena margem nas laterais da tela */
 }
+
 nav a {
     color: var(--white);
     background: var(--primary-dark);
     padding: 8px 18px;
     border-radius: 20px;
-    margin: 0 8px;
     text-decoration: none;
     font-weight: 500;
     transition: background 0.2s, color 0.2s;
-    display: inline-block;
+    white-space: nowrap; /* Garante que o texto dentro do botão não quebre */
 }
+
+/* Efeito ao passar o mouse nos botões de navegação */
 nav a:hover {
     background: var(--accent);
     color: var(--primary-dark);
 }
 
+/* Estilo para o link da página ativa (ex: "Home" na página inicial) */
+nav a.active {
+    background: var(--accent);
+    color: var(--primary-dark);
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* --- Bloco "Hero" (Página Inicial) --- */
+/* O contêiner principal da seção de boas-vindas. */
 .hero {
     max-width: 950px;
     margin: 40px auto 0 auto;
@@ -52,33 +93,36 @@ nav a:hover {
     padding: 0;
     border-radius: 18px;
     box-shadow: var(--shadow);
-    overflow: hidden;
-    display: flex;
-    flex-wrap: wrap;
+    overflow: hidden; /* Garante que a imagem não "vaze" das bordas arredondadas */
+    display: flex;    /* Coloca a imagem e o texto lado a lado */
+    flex-wrap: wrap;  /* Permite que os itens quebrem a linha em telas pequenas */
     align-items: stretch;
 }
+
+/* A imagem dentro do bloco "Hero" */
 .hero-img {
-    flex: 1 1 320px;
+    flex: 1 1 320px; /* Regra de flexbox para o tamanho da imagem */
     min-width: 260px;
     background: url('https://blog.aguiabranca.com.br/wp-content/uploads/2024/02/vila-velha_convento_2_tadeu-bianconi-scaled-1-1024x725.jpg') center center/cover no-repeat;
     min-height: 260px;
 }
+
+/* O conteúdo de texto dentro do bloco "Hero" */
 .hero-content {
-    flex: 1 1 50%; /* Permite que ele divida o espaço */
-    padding: 32px 40px; /* Adiciona um respiro para o texto */
+    flex: 1 1 50%;
+    padding: 32px 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-/* MODIFIQUE ESTAS REGRAS no lugar das regras antigas de .hero-btns */
-
+/* Os botões grandes de navegação dentro do "Hero" */
 .hero-btns {
     display: flex;
-    flex-direction: column;  /* Isso empilha os botões */
-    gap: 18px;               /* Espaço entre eles */
-    align-items: stretch;    /* Faz os botões ocuparem a largura do container */
-    margin-top: 28px;        /* Adiciona um espaço acima dos botões */
+    flex-direction: column;
+    gap: 18px;
+    align-items: stretch;
+    margin-top: 28px;
 }
 
 .hero-btns a {
@@ -91,25 +135,26 @@ nav a:hover {
     text-align: center;
     text-decoration: none;
     box-shadow: var(--shadow);
-    transition: background 0.2s, transform 0.2s;
+    transition: background 0.2s, transform 0.2s; /* Animação suave */
 }
 
 .hero-btns a:hover {
     background: var(--accent);
     color: var(--primary-dark);
-    transform: translateY(-2px);
+    transform: translateY(-2px); /* Efeito de "levantar" o botão */
 }
 
-
-
+/* --- Estilos de Conteúdo Geral --- */
+/* Estilo padrão para os "cards" brancos que contêm as listas. */
 section {
     max-width: 900px;
-    margin: 40px auto 0 auto;
+    margin: 40px auto 0 auto; /* Centraliza o card na tela */
     background: var(--white);
     padding: 32px 24px;
     border-radius: 18px;
     box-shadow: var(--shadow);
 }
+
 h2 {
     text-align: center;
     margin-top: 0;
@@ -117,23 +162,29 @@ h2 {
     font-size: 2rem;
     letter-spacing: 1px;
 }
+
 h3 {
     margin-top: 32px;
     color: var(--primary);
 }
+
 ul {
-    list-style: none;
+    list-style: none; /* Remove os pontinhos da lista */
     padding: 0;
 }
+
+/* Estilo para cada item da lista de locais */
 li {
     font-weight: 500;
     margin: 18px 0 0 0;
-    background: #e0f2f1;
+    background: #e0f2f1; /* Fundo verde claro */
     border-radius: 10px;
     padding: 12px 18px 10px 32px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.03);
     position: relative;
 }
+
+/* Adiciona o emoji "✨" antes de cada item da lista */
 li::before {
     content: "✨";
     position: absolute;
@@ -141,6 +192,8 @@ li::before {
     top: 14px;
     font-size: 1.1em;
 }
+
+/* Estilo padrão para todos os links */
 a {
     color: var(--primary);
     text-decoration: none;
@@ -148,10 +201,13 @@ a {
     font-weight: 500;
     transition: color 0.2s;
 }
+
 a:hover {
     color: var(--accent);
     text-decoration: underline;
 }
+
+/* Estilo para o pequeno texto de descrição em alguns itens */
 .desc {
     display: block;
     color: #555;
@@ -159,177 +215,85 @@ a:hover {
     margin-top: 4px;
     font-size: 0.98em;
 }
-footer {
-    background: var(--primary-dark);
-    color: var(--white);
-    text-align: center;
-    padding: 24px 10px 18px 10px;
-    margin-top: 50px;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-}
-/* Mapa responsivo */
-.map-responsive {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.12);
-    margin-top: 18px;
-}
-.map-responsive iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-/* Responsividade */
-@media (max-width: 900px) {
-    .hero {
-        flex-direction: row;
-    }
-    .hero-img {
-        min-height: 180px;
-        height: 220px;
-    }
-    .hero-content {
-        padding: 24px 8vw 24px 8vw;
-    }
-}
-@media (max-width: 700px) {
-    section {
-        padding: 18px 6vw;
-        margin: 24px 2vw 0 2vw;
-    }
-    header h1 {
-        font-size: 1.6rem;
-    }
-    h2 {
-        font-size: 1.2rem;
-    }
-    nav a {
-        padding: 7px 10px;
-        font-size: 1rem;
-    }
-}
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-    .hero-content h2 {
-        font-size: 1.2rem;
-    }
-    .hero-content {
-        padding: 18px 4vw 18px 4vw;
-    }
-    .hero-btns a {
-        font-size: 1rem;
-        padding: 10px 18px;
-    }
-}
-body, section, header, nav a, .hero, .hero-btns a, li {
-    transition: all 0.2s ease;
-}
+
+/* Efeito de hover para os itens da lista */
 li:hover {
     background: #b2dfdb;
     box-shadow: 0 4px 16px rgba(0,0,0,0.08);
     transform: translateY(-2px) scale(1.01);
     cursor: pointer;
 }
-li a {
-    color: #004d40;
-    font-weight: bold;
-}
-li a:hover {
-    color: #00bfae;
-}
-nav a.active {
-    background: var(--accent);
-    color: var(--primary-dark);
-    font-weight: bold;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-@media (max-width: 600px) {
-    .map-responsive {
-        /* Padrão é 56.25% (16:9). 75% é uma proporção 4:3, mais alta. */
-        padding-bottom: 75%; 
-    }
-}
-/* Estilo do Ícone do Mapa */
-/* Estilo do Ícone do Mapa Flutuante */
+
+/* --- Componente do Mapa (Modal e Ícone) --- */
+
+/* Estilo do Ícone Flutuante 🗺️ */
 .map-icon-toggle {
-    position: fixed;   /* A mágica que faz flutuar */
-    bottom: 20px;      /* 20 pixels de distância do fundo */
-    right: 20px;       /* 20 pixels de distância da direita */
-    z-index: 999;      /* Garante que ele fique acima de quase tudo */
+    position: fixed;   /* Faz o ícone flutuar sobre a página */
+    bottom: 20px;      /* Distância do fundo */
+    right: 20px;       /* Distância da direita */
+    z-index: 999;      /* Garante que ele fique acima de outros elementos */
 
     font-size: 2rem;
     background-color: var(--primary);
     color: var(--white);
     border: none;
-    border-radius: 50%;
-    width: 60px;       /* Aumentei o tamanho para ficar melhor */
+    border-radius: 50%; /* Deixa o botão redondo */
+    width: 60px;
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Sombra mais forte para destacar */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .map-icon-toggle:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-}
-
-.map-icon-toggle:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
     box-shadow: var(--shadow);
 }
 
-/* Estilos do Modal (Janela Pop-up) */
+/* Estilo do Modal (a janela pop-up do mapa) */
+/* O fundo escuro que cobre a tela inteira */
 .map-modal-overlay {
-    position: fixed; /* Fica por cima de todo o conteúdo */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0; /* Começa invisível */
-    pointer-events: none; /* Começa sem poder ser clicado */
+    pointer-events: none; /* Impede cliques quando invisível */
     transition: opacity 0.3s ease;
-    z-index: 1000;
+    z-index: 1000; /* Garante que fique acima de TUDO */
 }
 
-/* Classe que torna o modal visível */
+/* Classe adicionada via JavaScript para tornar o modal visível */
 .map-modal-overlay.is-visible {
     opacity: 1;
     pointer-events: auto;
 }
 
+/* O conteúdo branco dentro do modal */
 .map-modal-content {
     background: var(--white);
     padding: 20px;
     border-radius: 12px;
     width: 90%;
-    max-width: 800px; /* Largura máxima do mapa no PC */
+    max-width: 800px;
     position: relative;
-    transform: scale(0.9); /* Efeito de zoom ao aparecer */
+    transform: scale(0.9); /* Efeito de aparecer com zoom */
     transition: transform 0.3s ease;
 }
 
 .map-modal-overlay.is-visible .map-modal-content {
-    transform: scale(1);
+    transform: scale(1); /* Volta ao tamanho normal quando visível */
 }
 
+/* O botão de fechar "X" */
 .map-close-btn {
     position: absolute;
     top: -10px;
@@ -347,16 +311,196 @@ nav a.active {
     box-shadow: var(--shadow);
 }
 
-@media (max-width: 600px) {
-    /* Levanta o botão do mapa para não ficar sobre o rodapé fixo */
-    .map-icon-toggle {
-        bottom: 80px; 
-    }
+/* O título H3 dentro do modal */
+#map-modal-title {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+}
+
+/* O contêiner do mapa para mantê-lo responsivo */
+.map-responsive {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Truque para manter a proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.12);
+    margin-top: 18px;
+}
+
+.map-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 
+/* --- Estilos do Botão de Favorito --- */
+.favorite-btn {
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0.4;
+    filter: grayscale(1); /* Deixa o emoji em tons de cinza */
+    display: inline-block;
+    transition: all 0.2s ease-in-out;
+}
+
+.favorite-btn:hover {
+    opacity: 0.7;
+    transform: scale(1.2);
+}
+
+/* Estilo aplicado quando o <li> tem a classe .is-favorited */
+li.is-favorited .favorite-btn {
+    opacity: 1;
+    filter: grayscale(0); /* Devolve a cor ao emoji */
+    transform: scale(1.1);
+}
 
 
+/* --- Responsividade (Ajustes para Telas Menores) --- */
+/* Estas regras só são aplicadas quando a tela é menor que a largura especificada. */
 
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: row; /* Mantém lado a lado em tablets */
+    }
+    .hero-img {
+        min-height: 180px;
+        height: 220px;
+    }
+    .hero-content {
+        padding: 24px 8vw;
+    }
+}
 
+@media (max-width: 700px) {
+    section {
+        padding: 18px 6vw;
+        margin: 24px 2vw 0 2vw;
+    }
+    header h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.2rem; }
+    nav a { padding: 7px 10px; font-size: 1rem; }
+}
 
+@media (max-width: 600px) {
+    /* Ajustes finos para celulares */
+    header h1 { font-size: 1.5rem; }
+    .hero-content h2 { font-size: 1.2rem; }
+    .hero-content { padding: 18px 4vw; }
+    .hero-btns a { font-size: 1rem; padding: 10px 18px; }
+
+    /* Aumenta a altura do mapa em telas verticais */
+    .map-responsive {
+        padding-bottom: 75%; /* Proporção 4:3 */
+    }
+    
+    /* Levanta o botão do mapa para não ficar sobre o rodapé (se ele fosse fixo) */
+    .map-icon-toggle {
+        bottom: 20px; /* Voltado ao padrão, já que o rodapé não é mais fixo */
+    }
+}
+/* --- Estilos da Seção de Favoritos --- */
+
+#toggle-favorites-btn {
+    /* Estilo para parecer com os outros botões */
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0 auto;
+    background: var(--primary-dark);
+    color: var(--white);
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#toggle-favorites-btn:hover {
+    background: var(--accent);
+    color: var(--primary-dark);
+}
+
+/* Por padrão, a seção de favoritos começa escondida */
+#favorites-section {
+    display: none;
+    border-top: 1px solid #eee; /* Uma linha para separar visualmente */
+    margin-top: 32px;
+    padding-top: 24px;
+}
+
+/* Classe que o JavaScript vai usar para mostrar a seção */
+#favorites-section.is-visible {
+    display: block;
+}
+
+/* Estilo para a mensagem de "lista vazia" que vamos criar */
+#favorites-list .empty-message {
+    text-align: center;
+    color: #777;
+    background: none;
+    box-shadow: none;
+    padding: 20px;
+    font-weight: normal;
+}
+
+/* Remove o emoji "✨" dos itens que serão clonados para a lista de favoritos */
+#favorites-list li::before {
+    content: none; 
+}
+
+/* --- Estilos do Novo Rodapé --- */
+
+footer {
+    background: var(--primary-dark); /* Cor principal escura, igual à navegação */
+    color: var(--white);             /* Cor do texto principal do rodapé */
+    margin-top: 40px;
+    padding: 40px 20px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Título principal do rodapé (ex: "Explore os Mapas") */
+.footer-content h2 {
+    color: var(--white); /* Garante que o H2 também seja branco */
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+/* Títulos das colunas dos mapas */
+.footer-map-column h3 {
+    color: var(--accent); /* Cor de destaque para os subtítulos */
+    margin-top: 0;
+    text-align: center;
+}
+
+.footer-maps-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-map-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Texto de crédito no final */
+.footer-credit {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7); /* Branco com um pouco de transparência */
+}
