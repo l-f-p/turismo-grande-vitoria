@@ -545,3 +545,16 @@ footer {
 #create-route-btn:hover {
     background: var(--primary-dark);
 }
+/* --- Ajuste Responsivo para a Lista de Favoritos --- */
+
+/* O novo "embrulho" para o conteúdo do item da lista */
+.favorite-item-content {
+    /* Esta regra permite que o conteúdo cresça e ocupe o espaço restante */
+    flex: 1;
+}
+
+/* Garante que os links dentro da lista de favoritos possam quebrar a linha */
+.favorite-item-content a {
+    /* Permite que os links fiquem em múltiplas linhas se necessário */
+    white-space: normal;
+}
