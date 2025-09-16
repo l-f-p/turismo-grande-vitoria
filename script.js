@@ -129,21 +129,39 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    const createRouteBtn = document.querySelector('#create-route-btn');
-    if (createRouteBtn) {
-        createRouteBtn.addEventListener('click', function() {
-            const checkedBoxes = document.querySelectorAll('#favorites-list .favorite-route-checkbox:checked');
-            if (checkedBoxes.length < 2) {
-                alert("Por favor, selecione pelo menos dois locais para criar uma rota.");
-                return;
+// --- Evento do Botão "Criar Rota com Selecionados" ---
+const createRouteBtn = document.querySelector('#create-route-btn');
+if (createRouteBtn) {
+    createRouteBtn.addEventListener('click', function() {
+        console.log("1. Botão 'Criar Rota' foi clicado."); // MARCADOR 1
+
+        const checkedBoxes = document.querySelectorAll('#favorites-list .favorite-route-checkbox:checked');
+        console.log("2. Caixas de seleção encontradas:", checkedBoxes.length); // MARCADOR 2
+        
+        if (checkedBoxes.length < 2) {
+            alert("Por favor, selecione pelo menos dois locais para criar uma rota.");
+            return;
+        }
+
+        const addresses = [];
+        checkedBoxes.forEach(checkbox => {
+            const parentLi = checkbox.closest('li');
+            const address = parentLi.getAttribute('data-address');
+            if (address) {
+                addresses.push(address);
             }
-            const addresses = Array.from(checkedBoxes).map(checkbox => checkbox.closest('li').getAttribute('data-address'));
-            const urlPath = addresses.map(addr => encodeURIComponent(addr)).join('/');
-            const googleMapsUrl = `https://www.google.com/maps/dir/${urlPath}`;
-            window.open(googleMapsUrl, '_blank');
         });
-    }
+        console.log("3. Endereços extraídos:", addresses); // MARCADOR 3
+
+        const urlPath = addresses.map(addr => encodeURIComponent(addr)).join('/');
+        const googleMapsUrl = `https://www.google.com/maps/dir/${urlPath}`;
+        console.log("4. URL final da rota:", googleMapsUrl); // MARCADOR 4
+        
+        window.open(googleMapsUrl, '_blank');
+    });
+}
 
     // Inicia o sistema de favoritos na página.
     updateFavoritesUI();
 });
+
