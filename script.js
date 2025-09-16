@@ -58,41 +58,63 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem(favoritesKey, JSON.stringify(favorites));
     }
 
-    function displayFavoritesList() {
-        const favoritesList = document.querySelector('#favorites-list');
-        if (!favoritesList) return;
-        favoritesList.innerHTML = '';
-        const allOriginalItems = document.querySelectorAll('main li[data-id]');
-        const favoritedItems = Array.from(allOriginalItems).filter(item => favorites.includes(item.getAttribute('data-id')));
+// Função que cria e exibe a lista de favoritos (AGORA RESPONSIVA)
+function displayFavoritesList() {
+    const favoritesSection = document.querySelector('#favorites-section');
+    const favoritesList = document.querySelector('#favorites-list');
+    if (!favoritesSection || !favoritesList) return;
 
-        if (favoritedItems.length === 0) {
-            favoritesList.innerHTML = '<li class="empty-message">Você ainda não favoritou nenhum local.</li>';
-        } else {
-            const favoritesByCity = {};
-            favoritedItems.forEach(item => {
-                const cityH3 = item.closest('ul').previousElementSibling;
-                const cityName = cityH3 ? cityH3.textContent : 'Outros';
-                if (!favoritesByCity[cityName]) {
-                    favoritesByCity[cityName] = [];
-                }
-                favoritesByCity[cityName].push(item);
-            });
-            for (const city in favoritesByCity) {
-                const cityTitle = document.createElement('h3');
-                cityTitle.textContent = city;
-                favoritesList.appendChild(cityTitle);
-                favoritesByCity[city].forEach(itemNode => {
-                    const clone = itemNode.cloneNode(true);
-                    const checkbox = document.createElement('input');
-                    checkbox.type = 'checkbox';
-                    checkbox.className = 'favorite-route-checkbox';
-                    checkbox.checked = true;
-                    clone.prepend(checkbox);
-                    favoritesList.appendChild(clone);
-                });
+    favoritesList.innerHTML = ''; 
+
+    const favoritedItems = Array.from(document.querySelectorAll('main li[data-id]')).filter(item => {
+        return favorites.includes(item.getAttribute('data-id'));
+    });
+
+    if (favoritedItems.length === 0) {
+        favoritesList.innerHTML = '<li class="empty-message">Você ainda não favoritou nenhum local.</li>';
+    } else {
+        const favoritesByCity = {}; 
+        favoritedItems.forEach(item => {
+            const cityH3 = item.closest('ul').previousElementSibling;
+            const cityName = cityH3 ? cityH3.textContent : 'Outros';
+            if (!favoritesByCity[cityName]) {
+                favoritesByCity[cityName] = [];
             }
+            favoritesByCity[cityName].push(item);
+        });
+        
+        for (const city in favoritesByCity) {
+            const cityTitle = document.createElement('h3');
+            cityTitle.textContent = city;
+            favoritesList.appendChild(cityTitle);
+
+            favoritesByCity[city].forEach(itemNode => {
+                const clone = itemNode.cloneNode(true);
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.className = 'favorite-route-checkbox';
+                checkbox.checked = true;
+
+                // --- NOVA LÓGICA DE "EMBRULHO" ---
+                // 1. Cria a nova div que vai embrulhar o conteúdo
+                const contentWrapper = document.createElement('div');
+                contentWrapper.className = 'favorite-item-content';
+
+                // 2. Move todo o conteúdo do clone para dentro do "embrulho"
+                while (clone.firstChild) {
+                    contentWrapper.appendChild(clone.firstChild);
+                }
+
+                // 3. Adiciona o checkbox e o "embrulho" com o conteúdo de volta ao clone
+                clone.appendChild(checkbox);
+                clone.appendChild(contentWrapper);
+                // ------------------------------------
+
+                favoritesList.appendChild(clone);
+            });
         }
     }
+}
 
     function updateFavoritesUI() {
         const allLocations = document.querySelectorAll('li[data-id]');
@@ -164,4 +186,5 @@ if (createRouteBtn) {
     // Inicia o sistema de favoritos na página.
     updateFavoritesUI();
 });
+
 
