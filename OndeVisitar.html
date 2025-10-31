@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/684/684908.png">
+    <title>Turismo na Grande Vitória</title>
+</head>
+<body data-page-id="pontos-turisticos">
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="OndeVisitar.html" class="active" aria-current="page">Pontos Turísticos</a>
+            <!--
+            <a href="OndeComer.html">Restaurantes</a>
+            -->
+        </nav>
+        <button id="theme-toggle" type="button" aria-label="Alternar tema" aria-pressed="false">🌙</button>
+    </header>
+
+    <main>
+        <section>
+            <div class="main-actions-container">
+                <button id="toggle-favorites-btn">⭐ Meus Favoritos</button>
+                <button id="toggle-route-mode-btn">🗺️ Planejar Rota</button>
+            </div>
+
+            <section id="favorites-section">
+                <h3>⭐ Meus Favoritos</h3>
+                <ul id="favorites-list"></ul>  
+            </section>
+            
+            <h3>Vitória</h3>
+            <ul>
+                                
+                <li data-id="paneleiras-de-goiabeiras" 
+                data-location-name="Paneleiras de Goiabeiras"
+                data-address="R. Leopoldo Gomes de Sales, 94 - Goiabeiras, Vitória - ES, 29075-100">
+                                    
+                <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>Paneleiras de Goiabeiras</strong>
+                    <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>
+
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href="https://www.google.com/maps/place/Paneleiras+de+Goiabeiras+-+R.+Leopoldo+Gomes+de+Sales,+94+-+Goiabeiras,+Vit%C3%B3ria+-+ES,+29075-100/data=!4m2!3m1!1s0xb819c059fff577:0x588641f76aca0f91?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESBzI1LjM2LjIYACCenQoqmQEsOTQyNjc3MjcsOTQyODQ1MDUsOTQyMjMyOTksOTQyMTY0MTMsOTQyODA1NzYsOTQyMTI0OTYsOTQyMDczOTQsOTQyMDc1MDYsOTQyMDg1MDYsOTQyMTc1MjMsOTQyMTg2NTMsOTQyMjk4MzksOTQyNzUxNjgsOTQyNjI3MzksNDcwODQzOTMsOTQyMTMyMDAsOTQyNTgzMjVCAkJS&skid=f6b0368e-a198-4159-9446-bbb94b171ed3&g_st=aw" 
+                        data-embed-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.743275612882!2d-40.303304499999996!3d-20.269479199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb819c059fff577%3A0x588641f76aca0f91!2sPaneleiras%20de%20Goiabeiras!5e0!3m2!1sen!2sbr!4v1757951190939!5m2!1sen!2sbr" 
+                        data-location-name="Paneleiras de Goiabeiras"
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a>
+                    <a href="https://vitoria.es.gov.br/semc/paneleiras-de-goiabeiras" target="_blank" rel="noopener noreferrer" class="action-link">Site Gov</a>   
+                    </div>
+                </li>
+                
+                <li data-id="palacio-anchieta" 
+                data-location-name="Palácio Anchieta"
+                data-address="Praça João Clímaco, s/n - Centro, Vitória - ES, 29015-110">                  
+                <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>Palácio Anchieta</strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>
+                        
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href="https://www.google.com/maps/place/Palácio+Anchieta/data=!4m2!3m1!1s0x0:0xc710cbd6f33bbd86?sa=X&ved=1t:2428&ictx=111" 
+                        data-embed-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3741.493999669813!2d-40.3397104!3d-20.3212011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb83db078fa8693%3A0xc710cbd6f33bbd86!2sPal%C3%A1cio%20Anchieta!5e0!3m2!1sen!2sbr!4v1757951987545!5m2!1sen!2sbr" 
+                        data-location-name="Palácio Anchieta"
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a>
+                    <a href="https://www.es.gov.br/governo/palacio-anchieta" target="_blank" rel="noopener noreferrer" class="action-link">Site Gov</a>   
+                    </div>
+                </li>
+                
+                <li data-id="maes" 
+                data-location-name="Museu de Arte do Espírito Santo (MAES)"
+                data-address="Av. Jerônimo Monteiro, 631 - Centro, Vitória - ES, 29010-001">                   
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>Museu de Arte do Espírito Santo (MAES)</strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href="https://www.google.com/maps/place/Museu+de+Artes+do+Esp%C3%ADrito+Santo/@-20.3199393,-40.3369851,17z/data=!3m1!4b1!4m6!3m5!1s0xb83db07defaa87:0xd2c2a854296fbc8a!8m2!3d-20.3199393!4d-40.3344102!16s%2Fg%2F15dpjxz2?entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" 
+                        data-embed-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3741.524513112811!2d-40.33441019999999!3d-20.319939299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb83db07defaa87%3A0xd2c2a854296fbc8a!2sMuseu%20de%20Artes%20do%20Esp%C3%ADrito%20Santo!5e0!3m2!1sen!2sbr!4v1757952407112!5m2!1sen!2sbr" 
+                        data-location-name="Museu de Arte do Espírito Santo (MAES)"
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a>
+                    <a href="https://secult.es.gov.br/museu-de-arte-do-espirito-santo-dionisio-del-santo" target="_blank" rel="noopener noreferrer" class="action-link">Site Gov</a>   
+                    </div>
+                </li>
+                
+                <li data-id="sesc-gloria" 
+                data-location-name="Sesc Glória"
+                data-address="Av. Jerônimo Monteiro, 428 - Centro, Vitória - ES, 29010-002">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>Sesc Glória</strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>                        
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href="https://www.google.com/maps/place/Sesc+Gl%C3%B3ria/@-20.3206126,-40.3378674,17z/data=!3m1!4b1!4m6!3m5!1s0xb83dbad8922f93:0xa09e11ed2521b5ee!8m2!3d-20.3206126!4d-40.3352925!16s%2Fg%2F1tgwc493?entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" 
+                        data-embed-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3741.508231280306!2d-40.3352925!3d-20.320612600000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb83dbad8922f93%3A0xa09e11ed2521b5ee!2sSesc%20Gl%C3%B3ria!5e0!3m2!1sen!2sbr!4v1757952444159!5m2!1sen!2sbr" 
+                        data-location-name="Sesc Glória"
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a>
+                    <a href="https://www.sesc-es.com.br/unidades/sesc-gloria/" target="_blank" rel="noopener noreferrer" class="action-link">Site Oficial</a>   
+                    </div>
+                </li>
+                
+                <li data-id="acasa-flor" 
+                data-location-name="A Casa Flor"
+                data-address="Rua Gama Rosa N°, Lj 2 - Centro, Vitória - ES, 29015-100">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>A Casa Flor</strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href="https://www.google.com/maps/place/A+Casa+Flor/@-20.3190627,-40.338499,17z/data=!3m1!4b1!4m6!3m5!1s0xb83d5e5d2bd0c7:0xb90fa06a90e23f65!8m2!3d-20.3190627!4d-40.338499!16s%2Fg%2F11sk3w5cdh?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" 
+                        data-embed-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3741.5457103994195!2d-40.33849899999999!3d-20.3190627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb83d5e5d2bd0c7%3A0xb90fa06a90e23f65!2sA%20Casa%20Flor!5e0!3m2!1sen!2sbr!4v1757952471833!5m2!1sen!2sbr" 
+                        data-location-name="A Casa Flor"
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a>    
+                    </div>
+                </li>
+                
+                <li data-id="mcv" 
+                data-location-name="Museu de Ciências da Vida (UFES)"
+                data-address="UFES Campus de Goiabeiras, Centro de - Goiabeiras, Vitória - ES, 29075-910">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>Museu de Ciências da Vida (UFES)</strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>                        
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href="https://www.google.com/maps/place/Museu+de+Ci%C3%AAncias+da+Vida+-+MCV/@-20.2774143,-40.3024234,17z/data=!3m1!4b1!4m6!3m5!1s0xb81803c0b54b7d:0xea6c0a740387ed94!8m2!3d-20.2774143!4d-40.3024234!16s%2Fg%2F11f4zyvbdr?entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" 
+                        data-embed-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.5518115234136!2d-40.302423399999995!3d-20.2774143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb81803c0b54b7d%3A0xea6c0a740387ed94!2sMuseu%20de%20Ci%C3%AAncias%20da%20Vida%20-%20MCV!5e0!3m2!1sen!2sbr!4v1757952611690!5m2!1sen!2sbr" 
+                        data-location-name="Museu de Ciências da Vida (UFES)"
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a>
+                    <a href="https://mcv.ufes.br" target="_blank" rel="noopener noreferrer" class="action-link">Site UFES</a>
+                    </div>
+                </li>
+                
+                <li data-id="cine-metropolis" 
+                data-location-name="Cine Metrópolis (UFES)"
+                data-address="Avenida Fernando Ferrari, 514, UFES - Goiabeiras, Vitória - ES, 29075-910">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>Cine Metrópolis (UFES)</strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>                        
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href="https://www.google.com/maps/place/Cine+Metr%C3%B3polis/@-20.2774724,-40.3085675,15.33z/data=!4m6!3m5!1s0xb81803b880b19b:0x98a468f51c6f5c35!8m2!3d-20.277755!4d-40.3023879!16s%2Fg%2F11fkq_skg9?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" 
+                        data-embed-url="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14970.201637511924!2d-40.3085675!3d-20.2774724!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb81803b880b19b%3A0x98a468f51c6f5c35!2sCine%20Metr%C3%B3polis!5e0!3m2!1sen!2sbr!4v1757952751116!5m2!1sen!2sbr" 
+                        data-location-name="Cine Metrópolis (UFES)"
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a>
+                    <a href="https://cinema.ufes.br/" target="_blank" rel="noopener noreferrer" class="action-link">Site UFES</a>
+                    </div>
+                </li>
+                
+                <li data-id="mucane" 
+                data-location-name="MUCANE – Museu"
+                data-address="Av. República, 121 - Centro, Vitória - ES, 29010-700">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>MUCANE – Museu Capixaba do Negro</strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>                        
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href="https://www.google.com/maps/place/MUCANE+-+Museu+Capixaba+do+Negro/@-20.3208484,-40.3440733,17z/data=!3m1!4b1!4m6!3m5!1s0xb83db04fa67267:0xb3a0007f6057cce!8m2!3d-20.3208484!4d-40.3414984!16s%2Fg%2F1q69rxrdt?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" 
+                        data-embed-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3741.5025290103604!2d-40.3414984!3d-20.320848400000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb83db04fa67267%3A0xb3a0007f6057cce!2sMUCANE%20-%20Museu%20Capixaba%20do%20Negro!5e0!3m2!1sen!2sbr!4v1757952780651!5m2!1sen!2sbr" 
+                        data-location-name="MUCANE – Museu Capixaba do Negro"
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a>
+                    <a href="https://m.vitoria.es.gov.br/semc/museu-capixaba-do-negro" target="_blank" rel="noopener noreferrer" class="action-link">Site Gov</a>   
+                    </div>
+                </li>
+                
+                <li data-id="pier-de-iemanja" 
+                data-location-name="Píer de Iemanjá"
+                data-address="Av. Dante Michelini, 12 - Jardim da Penha, Vitória - ES, 29075-680">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>Píer de Iemanjá</strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>                        
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href="https://www.google.com/maps/place/P%C3%ADer+de+Iemanj%C3%A1+-+Pier+de+Iemanj%C3%A1+-+Goiabeiras,+Vit%C3%B3ria+-+ES/@-20.2920481,-40.288728,17z/data=!3m1!4b1!4m6!3m5!1s0xb8178cf73c10eb:0xb70f84669f39f9bc!8m2!3d-20.2920481!4d-40.2861531!16s%2Fg%2F11c5_dl1jl?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" 
+                        data-embed-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.198527879881!2d-40.28615310000001!3d-20.292048099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb8178cf73c10eb%3A0xb70f84669f39f9bc!2sP%C3%ADer%20de%20Iemanj%C3%A1%20-%20Pier%20de%20Iemanj%C3%A1%20-%20Goiabeiras%2C%20Vit%C3%B3ria%20-%20ES!5e0!3m2!1sen!2sbr!4v1757952809212!5m2!1sen!2sbr" 
+                        data-location-name="Píer de Iemanjá"
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a>
+                    </div>    
+                    <span class="desc">Bom local para piqueniques e lazer ao ar livre</span>
+                </li>
+
+                <li data-id="parque-fonte-grande" 
+                data-location-name="Parque da Fonte Grande"
+                data-address="Parque Estadual da Fonte Grande - Fonte Grande, Vitória - ES, 29050-510">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>Parque da Fonte Grande</strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>                        
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href="https://www.google.com/maps/place/Parque+Estadual+da+Fonte+Grande/@-20.3114016,-40.3485258,15z/data=!4m6!3m5!1s0xb83d945cc66de5:0x9b00ef23d1682c9!8m2!3d-20.3092029!4d-40.3414187!16s%2Fg%2F11fsvmdnkp?entry=ttu&g_ep=EgoyMDI1MDkxNS4wIKXMDSoASAFQAw%3D%3D" 
+                        data-embed-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14966.926190311848!2d-40.348525813967576!3d-20.3114015545548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb83d945cc66de5%3A0x9b00ef23d1682c9!2sParque%20Estadual%20da%20Fonte%20Grande!5e0!3m2!1sen!2sbr!4v1758163898402!5m2!1sen!2sbr" 
+                        data-location-name="Parque da Fonte Grande"
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a> 
+                    <a href="https://m.vitoria.es.gov.br/semmam/parque-da-fonte-grande" target="_blank" rel="noopener noreferrer" class="action-link">Site Gov</a>   
+                    </div>
+                </li>
+                <!---
+                <li data-id="pedra-da-cebola" 
+                    data-location-name="Parque Pedra da Cebola"
+                    data-address="R. Ana Vieira de Freitas, s/n - Mata da Praia, Vitória - ES, 29066-190">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>Parque Pedra da Cebola</strong>
+                    <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                        <a href="http://googleusercontent.com/maps/google.com/44" 
+                            data-embed-url="http://googleusercontent.com/maps/google.com/45" 
+                            data-location-name="Parque Pedra da Cebola"
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            class="location-link action-link">Localização</a>
+                        <a href="https://www.vitoria.es.gov.br/turista/parques-e-pracas/parque-pedra-da-cebola" target="_blank" rel="noopener noreferrer" class="action-link">Site Oficial</a>
+                    </div>
+                    <span class="desc">Ampla área verde com lagos, parquinhos e espaços para piquenique e lazer.</span>
+                    </div>
+                </li>
+                
+                <li data-id="parque-von-schilgen" 
+                data-location-name="Parque Von Schilgen"
+                data-address="">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>Parque Von Schilgen</strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>                        
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href="" 
+                        data-embed-url="" 
+                        data-location-name="Parque Von Schilgen"
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a>
+                    <a href="" target="_blank" rel="noopener noreferrer" class="action-link">Site Oficial</a>   
+                    </div>
+                </li>
+                
+                <li data-id="catedral-de-vitoria" 
+                data-location-name="Catedral de Vitória"
+                data-address="">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>Catedral de Vitória</strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>                        
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href="" 
+                        data-embed-url="" 
+                        data-location-name="Catedral de Vitória"
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a>
+                    <a href="" target="_blank" rel="noopener noreferrer" class="action-link">Site Oficial</a>   
+                    </div>
+                </li>
+                
+                <li data-id="parque-botanico-vale" 
+                data-location-name="Parque Botânico Vale"
+                data-address="">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>Parque Botânico Vale</strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>                        
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href="https://www." 
+                        data-embed-url="" 
+                        data-location-name="Parque Botânico Vale"
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a>
+                    <a href="" target="_blank" rel="noopener noreferrer" class="action-link">Site Oficial</a>   
+                    </div>
+                </li>
+                
+                <li data-id="projeto-tamar" 
+                data-location-name="Projeto Tamar"
+                data-address="">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>Projeto Tamar</strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>                        
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href="https://www." 
+                        data-embed-url="" 
+                        data-location-name="Projeto Tamar"
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a>
+                    <a href="" target="_blank" rel="noopener noreferrer" class="action-link">Site Oficial</a>   
+                    </div>
+                </li>
+            -->
+            </ul>
+
+            <h3>Vila Velha</h3>
+            <ul>
+                
+                <li data-id="morro-do-moreno" 
+                data-location-name="Morro do Moreno"
+                data-address="1056, R. Xavantes, 262 - Praia da Costa, Vila Velha - ES, 29101-190">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>Morro do Moreno</strong>
+                    <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>                        
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href="https://www.google.com/maps/place/Morro+do+Moreno/@-20.3263068,-40.2800384,17z/data=!3m1!4b1!4m6!3m5!1s0xb81652ae6a178b:0xa9fa17d57c1af295!8m2!3d-20.3263068!4d-40.2774635!16s%2Fg%2F1227vjzt?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" 
+                        data-embed-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3741.370512696845!2d-40.2774635!3d-20.326306799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb81652ae6a178b%3A0xa9fa17d57c1af295!2sMorro%20do%20Moreno!5e0!3m2!1sen!2sbr!4v1757952912691!5m2!1sen!2sbr" 
+                        data-location-name="Morro do Moreno"
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a>
+                    </div>    
+                    <span class="desc">Trilha e mirante com vista panorâmica da Grande Vitória</span>
+                </li>
+                
+                <li data-id="convento-da-penha" 
+                data-location-name="Convento da Penha"
+                data-address="R. Vasco Coutinho - Prainha, Vila Velha - ES, 29100-231">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>Convento da Penha</strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>                        
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href="https://www.google.com/maps/place/Convento+da+Penha/@-20.3293623,-40.2896439,17z/data=!3m1!4b1!4m6!3m5!1s0xb816498a913f37:0xa2c5411362c10f93!8m2!3d-20.3293623!4d-40.287069!16zL20vMDMwOHE5?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" 
+                        data-embed-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3741.2965978569914!2d-40.287068999999995!3d-20.329362300000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb816498a913f37%3A0xa2c5411362c10f93!2sConvento%20da%20Penha!5e0!3m2!1sen!2sbr!4v1757952940912!5m2!1sen!2sbr" 
+                        data-location-name="Convento da Penha"
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a>
+                    <a href="https://conventodapenha.org.br" target="_blank" rel="noopener noreferrer" class="action-link">Site Oficial</a>   
+                    </div>
+                </li>
+                
+                <li data-id="farol-de-santa-luzia" 
+                data-location-name="Farol de Santa Luzia"
+                data-address="R. Santa Luzia, 2 - Praia da Costa, Vila Velha - ES, 29101-100">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>Farol de Santa Luzia</strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>                        
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href="https://www.google.com/maps/place/Lighthouse+Santa+Luzia/@-20.3244785,-40.2866188,15z/data=!4m6!3m5!1s0xb817ab83631c57:0xf2d8777238238fe1!8m2!3d-20.3244785!4d-40.2675644!16s%2Fg%2F121qsl7x?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" 
+                        data-embed-url="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14965.658942235417!2d-40.2866188!3d-20.3244785!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb817ab83631c57%3A0xf2d8777238238fe1!2sLighthouse%20Santa%20Luzia!5e0!3m2!1sen!2sbr!4v1757952964027!5m2!1sen!2sbr" 
+                        data-location-name="Farol de Santa Luzia"
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a>
+                    <a href="https://www.vilavelha.es.gov.br/paginas/turismo-agendamento-de-visitacao-ao-farol-santa-luzia-somente-onibus-de-turismo" target="_blank" rel="noopener noreferrer" class="action-link">Site Gov</a>   
+                    </div>
+                </li>
+                
+                <li data-id="praia-secreta" 
+                data-location-name="Praia Secreta"
+                data-address="Costa Beach, Vila Velha - State of Espírito Santo">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>Praia Secreta</strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>                        
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href="https://www.google.com/maps/place/R.+Praia+Secreta+-+Praia+da+Costa,+Vila+Velha+-+ES/@-20.325373,-40.2725423,17z/data=!3m1!4b1!4m6!3m5!1s0xb817aa3a9bbd51:0xab92f38aec4b12e5!8m2!3d-20.325373!4d-40.2699674!16s%2Fg%2F11jntl_c0s?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" 
+                        data-embed-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3741.3930998974056!2d-40.2699674!3d-20.325373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb817aa3a9bbd51%3A0xab92f38aec4b12e5!2sR.%20Praia%20Secreta%20-%20Praia%20da%20Costa%2C%20Vila%20Velha%20-%20ES!5e0!3m2!1sen!2sbr!4v1757953002219!5m2!1sen!2sbr" 
+                        data-location-name="Praia Secreta"
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a>    
+                    </div>
+                </li>
+
+                <li data-id="batalhao-de-infantaria" 
+                data-location-name="38º Batalhão de Infantaria"
+                data-address="Praia de Piratininga, s/n - Prainha, Vila Velha - ES, 29100-901">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>38º Batalhão de Infantaria</strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>                        
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                        <a href="https://www.google.com/maps/place/38%C2%B0+Batalh%C3%A3o+de+Infantaria+do+Ex%C3%A9rcito+Brasileiro/@-20.324783,-40.2893106,17z/data=!3m1!4b1!4m6!3m5!1s0xb8164ae8fd801b:0xbc51f0d89b68bbb7!8m2!3d-20.324783!4d-40.2867357!16s%2Fg%2F1hc38f6xb?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" 
+                            data-embed-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3741.4073705869864!2d-40.2867357!3d-20.324783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb8164ae8fd801b%3A0xbc51f0d89b68bbb7!2s38%C2%B0%20Batalh%C3%A3o%20de%20Infantaria%20do%20Ex%C3%A9rcito%20Brasileiro!5e0!3m2!1sen!2sbr!4v1757953042784!5m2!1sen!2sbr" 
+                            data-location-name="38º Batalhão de Infantaria"
+                            target="_blank"
+                            rel="noopener noreferrer" 
+                            class="location-link action-link">Localização</a>
+                        <a href="https://www.38bi.eb.mil.br/servicos/espaco-cultural-forte-sao-francisco-xavier-da-barra?csrt=14848846816520279570" target="_blank" rel="noopener noreferrer" class="action-link">Site Oficial</a>   
+                    </div>
+                    <a href="https://www.instagram.com/cafeteriavistadoforte/" target="_blank" rel="noopener noreferrer">☕ Cafeteria Vista do Forte</a>
+                    <span class="desc">Visita exige vestimenta adequada</span>
+                </li>
+                
+                <li data-id="museu-vale" 
+                data-location-name="Museu Vale"
+                data-address="R. Vila Isabel, Vila Velha - ES, 29114-035">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>Museu Vale</strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>                        
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href="https://www.google.com/maps/place/Vale+Museum/@-20.326723,-40.3478316,17.75z/data=!4m6!3m5!1s0xb83d113ac828e1:0xc5e6358af776d872!8m2!3d-20.3266431!4d-40.3450837!16s%2Fg%2F1231gk8q?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" 
+                        data-embed-url="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3741.3604451322094!2d-40.3478316!3d-20.326723!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb83d113ac828e1%3A0xc5e6358af776d872!2sVale%20Museum!5e0!3m2!1sen!2sbr!4v1757953075556!5m2!1sen!2sbr" 
+                        data-location-name="Museu Vale"
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a>
+                    <a href="https://museuvale.org" target="_blank" rel="noopener noreferrer" class="action-link">Site Oficial</a>   
+                    </div>
+                    <span class="desc">Exposições de arte e eventos culturais</span>
+                </li>
+                <!--
+                <li data-id="" 
+                data-location-name=""
+                data-address="">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong></strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>                        
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href=""
+                        data-embed-url=""
+                        data-location-name=""
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a>
+                    <a href="" target="_blank" rel="noopener noreferrer" class="action-link">Site Oficial</a>   
+                    </div>
+                </li>
+            -->
+            </ul>
+
+            <h3>Serra</h3>
+            <ul>
+                
+                <li data-id="igreja-dos-reis-magos" 
+                data-location-name="Igreja dos Reis Magos"
+                data-address="Tv. Reis Magos II - Nova Almeida Centro, Serra - ES, 29182-528">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>Igreja dos Reis Magos</strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>                        
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href="https://www.google.com/maps/place/igreja+dos+reis+magos/data=!4m2!3m1!1s0xb7f12233915ec1:0x7f2c840206b68616?sa=X&ved=1t:155783&ictx=111" 
+                    data-embed-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3747.8087331638717!2d-40.1922455!3d-20.0584526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb7f12233915ec1%3A0x7f2c840206b68616!2sChurch%20of%20the%20Magi!5e0!3m2!1sen!2sbr!4v1757953100562!5m2!1sen!2sbr" 
+                    data-location-name="Igreja dos Reis Magos"
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="location-link action-link">Localização</a>
+                    </div>
+                    <span class="desc">Igreja histórica tombada, datada do período colonial</span>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Fora da Grande Vitória</h2>
+            <ul>
+                
+                <li data-id="domingos-martins" 
+                data-location-name="Domingos Martins"
+                data-address="Cidade de Domingos Martins - State of Espírito Santo, 29260-000">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>Domingos Martins</strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>                        
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href="https://www.google.com/maps/place/Domingos+Martins,+State+of+Esp%C3%ADrito+Santo,+29260-000/@-20.3653456,-40.6687556,15z/data=!3m1!4b1!4m6!3m5!1s0xb9b516e21b6539:0x6f177d0d615b9971!8m2!3d-20.3625703!4d-40.6582081!16s%2Fg%2F11bxfzb516?entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" 
+                        data-embed-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14961.701303643858!2d-40.6584558!3d-20.365345950000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb9b516e21b6539%3A0x6f177d0d615b9971!2sDomingos%20Martins%2C%20State%20of%20Esp%C3%ADrito%20Santo%2C%2029260-000!5e0!3m2!1sen!2sbr!4v1757953135777!5m2!1sen!2sbr" 
+                        data-location-name="Domingos Martins"
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a>    
+                    </div>
+                </li>
+
+                <li data-id="pedra-azul" 
+                data-location-name="Pedra Azul"
+                data-address="Pedra azul, Domingos Martins - State of Espírito Santo, 29260-000">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>Pedra Azul</strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>                        
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href="https://www.google.com/maps/place/Pico+Pedra+Azul/@-20.4333326,-40.9936331,15z/data=!3m1!4b1!4m6!3m5!1s0xb9985ca2b9de15:0x32d5c4edd38dd1b9!8m2!3d-20.4333333!4d-40.9833333!16s%2Fg%2F1237_xdx?entry=ttu&g_ep=EgoyMDI1MDkxMC4wIKXMDSoASAFQAw%3D%3D" 
+                        data-embed-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14955.100550554516!2d-40.99363305194479!3d-20.433332647135437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb9985ca2b9de15%3A0x32d5c4edd38dd1b9!2sPico%20Pedra%20Azul!5e0!3m2!1sen!2sbr!4v1757953189602!5m2!1sen!2sbr" 
+                        data-location-name="Pedra Azul"
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a>
+                    <a href="https://iema.es.gov.br/PEPAZ" target="_blank" rel="noopener noreferrer" class="action-link">Site Gov</a>   
+                    </div>
+                </li>
+                
+                <li data-id="mosteiro-zen" 
+                data-location-name="Mosteiro Zen (Buda)"
+                data-address="Jardim Zen - Parque Niwa Renpo Zenji - BR-101, 740 - Pendanga, Ibiraçu - ES, 29670-000">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong>Mosteiro Zen (Buda)</strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>                        
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href="https://www.google.com/maps/place/Mosteiro+ZEN/@-19.8744495,-40.3971541,14.17z/data=!4m6!3m5!1s0xb79594af950b25:0x9022edda28395277!8m2!3d-19.865873!4d-40.3826935!16s%2Fg%2F11rkdqm5ft?entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" 
+                        data-embed-url="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30017.472263516305!2d-40.3971541!3d-19.8744495!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb79594af950b25%3A0x9022edda28395277!2sMosteiro%20ZEN!5e0!3m2!1sen!2sbr!4v1757953298510!5m2!1sen!2sbr" 
+                        data-location-name="Mosteiro Zen (Buda)"
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a>
+                    <a href="https://mosteirozen.com.br/?page_id=682" target="_blank" rel="noopener noreferrer" class="action-link">Site Oficial</a>   
+                    </div>
+                    <span class="desc">Acesso à área externa onde fica o Buda gigante é gratuita. Para entrar no mosteiro, a entrada custa R$20,00.</span>
+                </li>
+            </ul>
+        </section>
+    <!--
+        <section>
+                    <h3>Em Branco</h3>
+            <ul>
+                
+                <li data-id="" 
+                data-location-name=""
+                data-address="">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong></strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>                        
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href=""
+                        data-embed-url=""
+                        data-location-name=""
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a>
+                    <a href="" target="_blank" rel="noopener noreferrer" class="action-link">Site Oficial</a>   
+                    </div>
+                </li>
+                
+                <li data-id="" 
+                data-location-name=""
+                data-address="">
+                    <button type="button" class="visited-btn" aria-label="Marcar como visitado">✅</button>
+                    <strong></strong>
+                        <div class="item-actions">
+                        <button type="button" class="favorite-btn" aria-label="Favoritar">❤️</button>                        
+                        <button type="button" class="dismiss-btn" aria-label="Não tenho interesse">🚫</button>
+                    </div>
+                    <div class="link-actions">
+                    <a href=""
+                        data-embed-url=""
+                        data-location-name=""
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        class="location-link action-link">Localização</a>
+                    <a href="" target="_blank" rel="noopener noreferrer" class="action-link">Site Oficial</a>   
+                    </div>
+                </li>
+            </ul>
+        </section>
+    -->
+    </main>
+    <footer>
+        <!-- <p>🌎 Projeto de Lucas - Turismo na Grande Vitória</p> -->
+    </footer>
+    <button id="back-to-top" title="Voltar ao topo">⬆️</button>
+
+        <div class="map-icon-toggle" role="button" aria-label="Abrir mapa" tabindex="0">
+            🗺️
+        </div>
+        
+        <div class="map-modal-overlay">
+            <div class="map-modal-content">
+                <button class="map-close-btn">×</button>
+                <h3 id="map-modal-title">Mapa</h3> 
+                <div class="map-responsive">
+                    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1ik6C1K6StANmTeuBqgxgQaBfX-MMM8E&ehbc=2E312F&noprof=1" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <a href="#" target="_blank" rel="noopener noreferrer" class="map-button">
+                    Abrir no Google Maps
+                </a>
+            </div>
+        </div>
+        <button id="generate-route-fab" class="route-fab">
+        Criar Rota (<span id="route-item-count">0</span>)
+    </button>
+    <script src="script.js"></script>
+
+</body>
+</html>
