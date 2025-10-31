@@ -104,83 +104,81 @@ document.addEventListener('DOMContentLoaded', function() {
         displayFavoritesList();
     }
 
+
     function updateSelectionUI() {
         const allListItems = document.querySelectorAll('li[data-id]');
         allListItems.forEach(item => {
             const itemId = item.getAttribute('data-id');
-            if (selectedForRoute.includes(itemId)) {
-                item.classList.add('is-selected');
-            } else {
-                item.classList.remove('is-selected');
+            if (selectedForRoute.includes(itemId)) item.classList.add('is-selected');
+            else item.classList.remove('is-selected');
+        });
+    }
+
+    // === Delegação de eventos da lista (funciona em mouse e toque) ===
+    const mainEl = document.querySelector('main');
+    function isRouteMode() { return document.body.classList.contains('route-planning-mode'); }
+
+    // Seleciona para rota imediatamente no pointerdown
+    if (mainEl) {
+        mainEl.addEventListener('pointerdown', (e) => {
+            if (!isRouteMode()) return;
+            const li = e.target.closest('li[data-id]');
+            if (!li) return;
+            // Ignora controles internos
+            if (e.target.closest('.favorite-btn, .visited-btn, .dismiss-btn, .location-link')) return;
+            toggleRouteSelection(li);
+        });
+
+        // Clique nos controles (favoritar, visitado, ignorar, abrir mapa)
+        mainEl.addEventListener('click', (event) => {
+            const favoriteBtn  = event.target.closest('.favorite-btn');
+            const visitedBtn   = event.target.closest('.visited-btn');
+            const dismissBtn   = event.target.closest('.dismiss-btn');
+            const locationLink = event.target.closest('.location-link');
+
+            if (favoriteBtn) {
+                const li = favoriteBtn.closest('li[data-id]');
+                const id = li.getAttribute('data-id');
+                const i = favorites.indexOf(id);
+                if (i > -1) favorites.splice(i,1); else favorites.push(id);
+                saveFavorites(); updateUI(); return;
+            }
+            if (visitedBtn) {
+                const li = visitedBtn.closest('li[data-id]');
+                const id = li.getAttribute('data-id');
+                const i = visited.indexOf(id);
+                if (i > -1) visited.splice(i,1); else visited.push(id);
+                saveVisited(); updateUI(); return;
+            }
+            if (dismissBtn) {
+                const li = dismissBtn.closest('li[data-id]');
+                const id = li.getAttribute('data-id');
+                const i = dismissed.indexOf(id);
+                if (i > -1) dismissed.splice(i,1); else dismissed.push(id);
+                saveDismissed(); updateUI(); return;
+            }
+            if (locationLink) {
+                event.preventDefault();
+                const overlay = document.querySelector('.map-modal-overlay');
+                const iframe = overlay?.querySelector('iframe');
+                const titleEl = document.querySelector('#map-modal-title');
+                const gmBtn = overlay?.querySelector('.map-button');
+                const shareUrl = locationLink.getAttribute('href');
+                const embedUrl = locationLink.getAttribute('data-embed-url');
+                const name = locationLink.getAttribute('data-location-name');
+                if (overlay && iframe && embedUrl && name) {
+                    iframe.src = embedUrl;
+                    if (titleEl) titleEl.textContent = 'Mapa: ' + name;
+                    if (gmBtn) {
+                        if (shareUrl) { gmBtn.style.display = 'block'; gmBtn.href = shareUrl; }
+                        else gmBtn.style.display = 'none';
+                    }
+                    overlay.classList.add('is-visible');
+                }
             }
         });
     }
 
-    // Ouvinte unificado
-// ...existing code...
-
-    // Evita dupla execução no click após tratarmos o pointerdown (mouse ou toque)
-    document.querySelector('main').addEventListener('click', function(e){
-        const liPtr = e.target.closest('li[data-id][data-ptr-handled="1"]');
-        if (liPtr && document.body.classList.contains('route-planning-mode')) {
-            liPtr.removeAttribute('data-ptr-handled');
-            e.stopPropagation();
-            e.preventDefault();
-            return;
-        }
-    }, true); // captura antes do listener principal
-
-    (function enableTouchRouteSelection(){
-        const main = document.querySelector('main');
-        if (!main) return;
-
-        const TAP_MAX_MOVEMENT = 10; // px
-        let tracking = false;
-        let startX = 0;
-        let startY = 0;
-        let moved = false;
-        let targetLi = null;
-
-        function pointerDown(e){
-            if (!document.body.classList.contains('route-planning-mode')) return;
-            const li = e.target.closest('li[data-id]');
-            if (!li) return;
-            // Ignora toques/cliques em botões internos
-            if (e.target.closest('.favorite-btn, .visited-btn, .dismiss-btn, .location-link')) return;
-
-            tracking = true;
-            startX = e.clientX;
-            startY = e.clientY;
-            moved = false;
-            targetLi = li;
-
-            // Feedback imediato: alterna já no pointerdown
-            toggleRouteSelection(targetLi);
-            // Marca para ignorar o click subsequente do mesmo gesto
-            targetLi.setAttribute('data-ptr-handled','1');
-        }
-
-        function pointerMove(e){
-            if (!tracking) return;
-            if (Math.abs(e.clientX - startX) > TAP_MAX_MOVEMENT ||
-                Math.abs(e.clientY - startY) > TAP_MAX_MOVEMENT) {
-                moved = true; // virou scroll/arrasto
-            }
-        }
-
-        function endInteraction(){
-            // Nada a fazer aqui pois alternamos no pointerdown
-            tracking = false;
-            targetLi = null;
-        }
-
-        main.addEventListener('pointerdown', pointerDown, { passive:true });
-        main.addEventListener('pointermove', pointerMove, { passive:true });
-        main.addEventListener('pointerup', endInteraction, { passive:true });
-        main.addEventListener('pointercancel', endInteraction, { passive:true });
-    })();
-
-// ...existing code...
 
     // Toggle favoritos
     const toggleBtn = document.querySelector('#toggle-favorites-btn');
@@ -285,77 +283,6 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('themePref', isDark ? 'dark' : 'light');
         });
     })();
-
-    // Suporte a toque: seleciona no pointerdown (touch) sem precisar “tocar duas vezes”
-    // ...existing code (coloque após a função toggleRouteSelection e antes de updateUI) ...
-
-    // Evita dupla execução no click após tratarmos o tap
-    document.querySelector('main').addEventListener('click', function(e){
-        const liTap = e.target.closest('li[data-id][data-tap-handled="1"]');
-        if (liTap && document.body.classList.contains('route-planning-mode')) {
-            liTap.removeAttribute('data-tap-handled');
-            e.stopPropagation();
-            e.preventDefault();
-            return;
-        }
-    }, true); // captura antes do listener principal
-
-    (function enableTouchRouteSelection(){
-        const main = document.querySelector('main');
-        if (!main) return;
-
-        const TAP_MAX_MOVEMENT = 10; // px
-        let tracking = false;
-        let startX = 0;
-        let startY = 0;
-        let moved = false;
-        let targetLi = null;
-
-        function pointerDown(e){
-            if (!document.body.classList.contains('route-planning-mode')) return;
-            if (e.pointerType !== 'touch') return;
-            const li = e.target.closest('li[data-id]');
-            if (!li) return;
-            // Ignora toques em botões internos
-            if (e.target.closest('.favorite-btn, .visited-btn, .dismiss-btn, .location-link')) return;
-
-            tracking = true;
-            startX = e.clientX;
-            startY = e.clientY;
-            moved = false;
-            targetLi = li;
-        }
-
-        function pointerMove(e){
-            if (!tracking) return;
-            if (Math.abs(e.clientX - startX) > TAP_MAX_MOVEMENT ||
-                Math.abs(e.clientY - startY) > TAP_MAX_MOVEMENT) {
-                moved = true; // virou scroll/arrasto
-            }
-        }
-
-        function endInteraction(e){
-            if (!tracking) return;
-            if (!moved && targetLi && document.body.classList.contains('route-planning-mode')) {
-                // Tap válido: alterna seleção
-                toggleRouteSelection(targetLi);
-                // Marcar para impedir duplicação no click subsequente
-                targetLi.setAttribute('data-tap-handled','1');
-                e.preventDefault();
-            }
-            tracking = false;
-            targetLi = null;
-        }
-
-        main.addEventListener('pointerdown', pointerDown, { passive:true });
-        main.addEventListener('pointermove', pointerMove, { passive:true });
-        main.addEventListener('pointerup', endInteraction, { passive:false });
-        main.addEventListener('pointercancel', endInteraction, { passive:false });
-    })();
-
-    // (opcional) Melhor destaque visual se ainda não tiver
-    // Adicione no CSS se precisar:
-    // li.is-selected { outline:3px solid var(--accent); outline-offset:2px; }
 
 
     updateUI(); // Inicia o sistema
